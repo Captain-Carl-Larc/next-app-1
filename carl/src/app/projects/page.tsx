@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 
 interface Project {
@@ -226,19 +226,19 @@ export default function ProjectsPage() {
     };
 
     // Testimonials carousel functions
-    const nextTestimonials = () => {
+    const nextTestimonials = useCallback(() => {
         setCurrentTestimonialIndex((prev) => (prev + 1) % totalTestimonialPages);
-    };
+    }, [totalTestimonialPages]);
 
-    const prevTestimonials = () => {
+    const prevTestimonials = useCallback(() => {
         setCurrentTestimonialIndex((prev) => (prev - 1 + totalTestimonialPages) % totalTestimonialPages);
-    };
+    }, [totalTestimonialPages]);
 
     // Auto-advance testimonials every 5 seconds
     useEffect(() => {
         const timer = setInterval(nextTestimonials, 5000);
         return () => clearInterval(timer);
-    }, []);
+    }, [nextTestimonials]);
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -465,7 +465,7 @@ export default function ProjectsPage() {
                                                 </div>
                                             </div>
                                             <p className="mt-4 text-gray-600">
-                                                "{testimonial.quote}"
+                                                &quot;{testimonial.quote}&quot;
                                             </p>
                                         </div>
                                     ))}
@@ -520,7 +520,7 @@ export default function ProjectsPage() {
                             </Link>
                         </div>
                         <p className="mt-4 text-sm text-gray-500">
-                            No project is too big or too small. Let's discuss how I can help you achieve your goals.
+                            No project is too big or too small. Let&apos;s discuss how I can help you achieve your goals.
                         </p>
                     </div>
                 </div>
@@ -534,7 +534,7 @@ export default function ProjectsPage() {
                             Ready to Build Something Amazing?
                         </h2>
                         <p className="mt-4 text-lg text-gray-600">
-                            Let's work together to bring your vision to life
+                            Let&apos;s work together to bring your vision to life
                         </p>
                     </div>
 

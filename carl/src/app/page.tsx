@@ -11,7 +11,7 @@ const featuredProjects = [
     id: 1,
     title: "E-Commerce Platform",
     description: "A modern e-commerce solution with real-time inventory and AI-powered recommendations",
-    image: "/images/projects/ecommerce.jpg",
+    image: "https://placehold.co/1200x675/EEE/31316A?text=E-Commerce+Platform",
     tech: ["Next.js", "Node.js", "MongoDB"],
     link: "/projects/ecommerce"
   },
@@ -19,7 +19,7 @@ const featuredProjects = [
     id: 2,
     title: "Health & Fitness App",
     description: "Mobile-first fitness tracking application with personalized workout plans",
-    image: "/images/projects/fitness.jpg",
+    image: "https://placehold.co/1200x675/EEE/31316A?text=Fitness+App",
     tech: ["React Native", "Firebase", "TensorFlow"],
     link: "/projects/fitness"
   },
@@ -27,7 +27,7 @@ const featuredProjects = [
     id: 3,
     title: "Smart Home Dashboard",
     description: "IoT dashboard for monitoring and controlling smart home devices",
-    image: "/images/projects/dashboard.jpg",
+    image: "https://placehold.co/1200x675/EEE/31316A?text=Smart+Home",
     tech: ["React", "Python", "MQTT"],
     link: "/projects/smarthome"
   }
@@ -346,8 +346,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-700 italic leading-relaxed">
-                "Carl's expertise in web development helped us transform our digital presence. 
-                The attention to detail and commitment to quality was exceptional."
+                &ldquo;Carl&apos;s expertise in web development helped us transform our digital presence. 
+                The attention to detail and commitment to quality was exceptional.&rdquo;
               </p>
             </motion.div>
 
@@ -365,8 +365,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-700 italic leading-relaxed">
-                "Working with Carl was a game-changer for our mobile app development. 
-                His technical skills and problem-solving abilities are top-notch."
+                &ldquo;Working with Carl was a game-changer for our mobile app development. 
+                His technical skills and problem-solving abilities are top-notch.&rdquo;
               </p>
             </motion.div>
 
@@ -384,8 +384,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-700 italic leading-relaxed">
-                "The cloud solutions Carl implemented revolutionized our infrastructure. 
-                His expertise and dedication to the project were invaluable."
+                &ldquo;The cloud solutions Carl implemented revolutionized our infrastructure. 
+                His expertise and dedication to the project were invaluable.&rdquo;
               </p>
             </motion.div>
           </div>
@@ -404,7 +404,7 @@ export default function Home() {
                 Ready to Start Your Project?
               </h2>
               <p className="mt-4 text-xl text-blue-100">
-                Let's work together to bring your ideas to life.
+                Let&apos;s work together to bring your ideas to life.
               </p>
               <div className="mt-8">
                 <Link

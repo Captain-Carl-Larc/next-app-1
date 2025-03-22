@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -9,24 +10,19 @@ export default function Contact() {
         subject: '',
         message: ''
     });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setIsSubmitting(true);
-        setSubmitStatus('idle');
+        setSubmitStatus('submitting');
 
         try {
-            // Here you would typically send the form data to your backend
-            // For now, we'll simulate an API call
+            // Simulate API call
             await new Promise(resolve => setTimeout(resolve, 1000));
             setSubmitStatus('success');
-            setFormData({ name: '', email: '', subject: '', message: '' });
         } catch (error) {
+            console.error('Error submitting form:', error);
             setSubmitStatus('error');
-        } finally {
-            setIsSubmitting(false);
         }
     };
 
@@ -194,12 +190,12 @@ export default function Contact() {
 
                                 <button
                                     type="submit"
-                                    disabled={isSubmitting}
+                                    disabled={submitStatus === 'submitting'}
                                     className={`w-full px-8 py-4 bg-blue-600 text-white font-medium rounded-lg 
-                                        ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'} 
+                                        ${submitStatus === 'submitting' ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'} 
                                         transition-colors duration-200`}
                                 >
-                                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                                    {submitStatus === 'submitting' ? 'Sending...' : 'Send Message'}
                                 </button>
                             </form>
                         </div>

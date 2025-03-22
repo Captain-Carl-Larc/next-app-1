@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { blogPosts, BlogPost } from './data';
+import { blogPosts } from './data';
 
 const ITEMS_PER_PAGE = 6;
 
