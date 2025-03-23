@@ -22,7 +22,8 @@ function About() {
                     </div>
                     <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
                         <div className="absolute inset-0 bg-blue-100 flex items-center justify-center">
-                            <span className="text-blue-600 text-sm">Profile Image</span>
+                            <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Profile Image" />
+                            {/* <span className="text-blue-600 text-sm">Profile Image</span> */}
                         </div>
                     </div>
                 </div>

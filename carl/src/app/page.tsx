@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { getImageUrl, isImageValid } from '../../config/images'
 
 // Featured projects data
 const featuredProjects = [
@@ -11,7 +12,7 @@ const featuredProjects = [
     id: 1,
     title: "E-Commerce Platform",
     description: "A modern e-commerce solution with real-time inventory and AI-powered recommendations",
-    image: "https://placehold.co/1200x675/EEE/31316A?text=E-Commerce+Platform",
+    image: "ecommerce",
     tech: ["Next.js", "Node.js", "MongoDB"],
     link: "/projects/ecommerce"
   },
@@ -19,7 +20,7 @@ const featuredProjects = [
     id: 2,
     title: "Health & Fitness App",
     description: "Mobile-first fitness tracking application with personalized workout plans",
-    image: "https://placehold.co/1200x675/EEE/31316A?text=Fitness+App",
+    image: "fitness",
     tech: ["React Native", "Firebase", "TensorFlow"],
     link: "/projects/fitness"
   },
@@ -27,7 +28,7 @@ const featuredProjects = [
     id: 3,
     title: "Smart Home Dashboard",
     description: "IoT dashboard for monitoring and controlling smart home devices",
-    image: "https://placehold.co/1200x675/EEE/31316A?text=Smart+Home",
+    image: "smarthome",
     tech: ["React", "Python", "MQTT"],
     link: "/projects/smarthome"
   }
@@ -137,10 +138,10 @@ export default function Home() {
               className="aspect-w-16 aspect-h-9 relative"
             >
               <Image
-                src={featuredProjects[currentProject].image}
-                alt={featuredProjects[currentProject].title}
-                width={1200}
-                height={675}
+                src={getImageUrl('projects', featuredProjects[currentProject].image)}
+                alt="E-commerce Project"
+                width={800}
+                height={600}
                 className="w-full h-full object-cover rounded-t-2xl"
                 priority
               />
